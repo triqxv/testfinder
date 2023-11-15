@@ -1,0 +1,481 @@
+--Key:
+
+local Code = "Release"
+local KeyE = false
+
+-- Instances:
+
+local FruitFinder = Instance.new("ScreenGui")
+local Background = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local UnlockedGui = Instance.new("Folder")
+local PlayerPicture = Instance.new("ImageLabel")
+local Title = Instance.new("TextLabel")
+local Stats = Instance.new("TextLabel")
+local Time = Instance.new("TextLabel")
+local Discord = Instance.new("TextLabel")
+local Subtitle = Instance.new("TextLabel")
+local PlayerName = Instance.new("TextLabel")
+local LockedGui = Instance.new("Folder")
+local Title_2 = Instance.new("TextLabel")
+local GetKey = Instance.new("TextButton")
+local Key = Instance.new("TextBox")
+local CheckKey = Instance.new("TextButton")
+
+--Properties:
+
+FruitFinder.Name = "FruitFinder"
+FruitFinder.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+FruitFinder.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Background.Name = "Background"
+Background.Parent = FruitFinder
+Background.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Background.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Background.BorderSizePixel = 0
+Background.Position = UDim2.new(0.129303753, 0, 0.314814895, 0)
+Background.Size = UDim2.new(0.455241114, 0, 0.367901236, 0)
+
+UICorner.CornerRadius = UDim.new(0, 10)
+UICorner.Parent = Background
+
+UnlockedGui.Name = "UnlockedGui"
+UnlockedGui.Parent = Background
+
+PlayerPicture.Name = "PlayerPicture"
+PlayerPicture.Parent = UnlockedGui
+PlayerPicture.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+PlayerPicture.BackgroundTransparency = 1.000
+PlayerPicture.BorderColor3 = Color3.fromRGB(0, 0, 0)
+PlayerPicture.BorderSizePixel = 0
+PlayerPicture.Position = UDim2.new(0.026890751, 0, 0.248322144, 0)
+PlayerPicture.Size = UDim2.new(0.168067187, 0, 0.335570484, 0)
+PlayerPicture.Visible = false
+PlayerPicture.Image = "rbxasset://textures/ui/GuiImagePlaceholder.png"
+
+Title.Name = "Title"
+Title.Parent = UnlockedGui
+Title.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+Title.BackgroundTransparency = 1.000
+Title.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Title.BorderSizePixel = 0
+Title.Position = UDim2.new(0, 0, -0.000878250867, 0)
+Title.Size = UDim2.new(0.999999821, 0, 0.174496651, 0)
+Title.Visible = false
+Title.Font = Enum.Font.FredokaOne
+Title.Text = "PunkHub Fruit Finder"
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title.TextScaled = true
+Title.TextSize = 14.000
+Title.TextWrapped = true
+
+Stats.Name = "Stats"
+Stats.Parent = UnlockedGui
+Stats.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+Stats.BackgroundTransparency = 1.000
+Stats.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Stats.BorderSizePixel = 0
+Stats.Position = UDim2.new(0, 0, 0.824625134, 0)
+Stats.Size = UDim2.new(0.551260412, 0, 0.174496651, 0)
+Stats.Visible = false
+Stats.Font = Enum.Font.FredokaOne
+Stats.Text = "FPS: 60 Ping: 0ms"
+Stats.TextColor3 = Color3.fromRGB(255, 255, 255)
+Stats.TextScaled = true
+Stats.TextSize = 14.000
+Stats.TextWrapped = true
+
+Time.Name = "Time"
+Time.Parent = UnlockedGui
+Time.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+Time.BackgroundTransparency = 1.000
+Time.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Time.BorderSizePixel = 0
+Time.Position = UDim2.new(-2.56450186e-08, 0, 0.650128484, 0)
+Time.Size = UDim2.new(0.569747806, 0, 0.174496651, 0)
+Time.Visible = false
+Time.Font = Enum.Font.FredokaOne
+Time.Text = "00:00:00"
+Time.TextColor3 = Color3.fromRGB(255, 255, 255)
+Time.TextScaled = true
+Time.TextSize = 14.000
+Time.TextWrapped = true
+
+Discord.Name = "Discord"
+Discord.Parent = UnlockedGui
+Discord.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+Discord.BackgroundTransparency = 1.000
+Discord.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Discord.BorderSizePixel = 0
+Discord.Position = UDim2.new(0.602330089, 0, 0.824625134, 0)
+Discord.Size = UDim2.new(0.396638572, 0, 0.174496651, 0)
+Discord.Visible = false
+Discord.Font = Enum.Font.FredokaOne
+Discord.Text = "discord.gg/silentcaliber"
+Discord.TextColor3 = Color3.fromRGB(255, 255, 255)
+Discord.TextScaled = true
+Discord.TextSize = 14.000
+Discord.TextWrapped = true
+
+Subtitle.Name = "Subtitle"
+Subtitle.Parent = UnlockedGui
+Subtitle.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+Subtitle.BackgroundTransparency = 1.000
+Subtitle.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Subtitle.BorderSizePixel = 0
+Subtitle.Position = UDim2.new(0.551260412, 0, 0.331336528, 0)
+Subtitle.Size = UDim2.new(0.447058737, 0, 0.174496651, 0)
+Subtitle.Visible = false
+Subtitle.Font = Enum.Font.FredokaOne
+Subtitle.Text = "Searching fruits..."
+Subtitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+Subtitle.TextScaled = true
+Subtitle.TextSize = 14.000
+Subtitle.TextWrapped = true
+
+PlayerName.Name = "PlayerName"
+PlayerName.Parent = UnlockedGui
+PlayerName.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+PlayerName.BackgroundTransparency = 1.000
+PlayerName.BorderColor3 = Color3.fromRGB(0, 0, 0)
+PlayerName.BorderSizePixel = 0
+PlayerName.Position = UDim2.new(0.172078073, 0, 0.331336528, 0)
+PlayerName.Size = UDim2.new(0.396638572, 0, 0.174496651, 0)
+PlayerName.Visible = false
+PlayerName.Font = Enum.Font.FredokaOne
+PlayerName.Text = "@Name"
+PlayerName.TextColor3 = Color3.fromRGB(255, 255, 255)
+PlayerName.TextScaled = true
+PlayerName.TextSize = 14.000
+PlayerName.TextWrapped = true
+
+LockedGui.Name = "LockedGui"
+LockedGui.Parent = Background
+
+Title_2.Name = "Title"
+Title_2.Parent = LockedGui
+Title_2.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+Title_2.BackgroundTransparency = 1.000
+Title_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Title_2.BorderSizePixel = 0
+Title_2.Position = UDim2.new(0, 0, -0.000878250867, 0)
+Title_2.Size = UDim2.new(0.999999821, 0, 0.218120798, 0)
+Title_2.Font = Enum.Font.FredokaOne
+Title_2.Text = "Key System"
+Title_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title_2.TextScaled = true
+Title_2.TextSize = 14.000
+Title_2.TextWrapped = true
+
+GetKey.Name = "GetKey"
+GetKey.Parent = LockedGui
+GetKey.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+GetKey.BorderColor3 = Color3.fromRGB(0, 0, 0)
+GetKey.BorderSizePixel = 0
+GetKey.Position = UDim2.new(0.831932604, 0, 0.832214773, 0)
+GetKey.Size = UDim2.new(0.168067187, 0, 0.167785242, 0)
+GetKey.Font = Enum.Font.FredokaOne
+GetKey.Text = "Get Key"
+GetKey.TextColor3 = Color3.fromRGB(70, 70, 70)
+GetKey.TextScaled = true
+GetKey.TextSize = 14.000
+GetKey.TextWrapped = true
+
+Key.Name = "Key"
+Key.Parent = LockedGui
+Key.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Key.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Key.BorderSizePixel = 0
+Key.Position = UDim2.new(0, 0, 0.372483224, 0)
+Key.Size = UDim2.new(0.999999821, 0, 0.251677841, 0)
+Key.Font = Enum.Font.FredokaOne
+Key.PlaceholderColor3 = Color3.fromRGB(70, 70, 70)
+Key.PlaceholderText = "Type Key"
+Key.Text = ""
+Key.TextColor3 = Color3.fromRGB(0, 0, 0)
+Key.TextScaled = true
+Key.TextSize = 14.000
+Key.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+Key.TextWrapped = true
+
+CheckKey.Name = "CheckKey"
+CheckKey.Parent = LockedGui
+CheckKey.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CheckKey.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CheckKey.BorderSizePixel = 0
+CheckKey.Position = UDim2.new(0, 0, 0.832214773, 0)
+CheckKey.Size = UDim2.new(0.168067187, 0, 0.167785242, 0)
+CheckKey.Font = Enum.Font.FredokaOne
+CheckKey.Text = "Check Key"
+CheckKey.TextColor3 = Color3.fromRGB(70, 70, 70)
+CheckKey.TextScaled = true
+CheckKey.TextSize = 14.000
+CheckKey.TextWrapped = true
+
+-- Scripts:
+
+local function HIHMY_fake_script() -- LockedGui.KeySystem 
+	local script = Instance.new('LocalScript', LockedGui)
+
+	GetKey.Activated:Connect(function()
+		setclipboard(Code)
+	end)
+
+	CheckKey.Activated:Connect(function()
+		if Key.Text == Code then
+			KeyE = true
+
+			for i,v in pairs(LockedGui:GetDescendants()) do
+				if v:IsA("GuiObject") then
+					v.Visible = false
+				end
+			end
+			for i,v in pairs(UnlockedGui:GetDescendants()) do
+				if v:IsA("GuiObject") then
+					v.Visible = true
+				end
+			end
+		end
+	end)
+end
+coroutine.wrap(HIHMY_fake_script)()
+local function KOULNL_fake_script() -- Background.Drag 
+	local script = Instance.new('LocalScript', Background)
+
+	local UIS = game:GetService('UserInputService')
+	local frame = Background
+	local dragToggle = nil
+	local dragSpeed = 0.25
+	local dragStart = nil
+	local startPos = nil
+
+	local function updateInput(input)
+		local delta = input.Position - dragStart
+		local position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X,
+			startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+		game:GetService('TweenService'):Create(frame, TweenInfo.new(dragSpeed), {Position = position}):Play()
+	end
+
+	frame.InputBegan:Connect(function(input)
+		if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then 
+			dragToggle = true
+			dragStart = input.Position
+			startPos = frame.Position
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragToggle = false
+				end
+			end)
+		end
+	end)
+
+	UIS.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			if dragToggle then
+				updateInput(input)
+			end
+		end
+	end)
+end
+coroutine.wrap(KOULNL_fake_script)()
+local function IORYQ_fake_script() -- Background.Main 
+	local script = Instance.new('LocalScript', Background)
+
+	spawn(function()
+		repeat wait(1) until KeyE == true
+
+		local script = Instance.new('LocalScript', Background)
+
+		local function Round(Number)
+			local Decimal = Number - math.floor(Number)
+
+			if Decimal >= .5 then
+				return math.ceil(Number)
+			else
+				return math.floor(Number)
+			end
+		end
+
+		--FPS
+		spawn(function()
+			while wait(.25) do
+				Stats.Text = 
+					"FPS: " .. Round(workspace:GetRealPhysicsFPS())
+			end
+		end)
+
+		--Name, PlayerPicture
+		PlayerName.Text = game.Players.LocalPlayer.DisplayName
+
+		local UserId = game.Players.LocalPlayer.UserId
+		local ThumbnailType = Enum.ThumbnailType.HeadShot
+		local ThumbnailSize = Enum.ThumbnailSize.Size420x420
+		PlayerPicture.Image = game.Players:GetUserThumbnailAsync(
+			UserId, 
+			ThumbnailType, 
+			ThumbnailSize
+		)
+
+		--CurrentTime
+		spawn(function()
+			while wait() do
+				local HMS = os.date("%H:%M:%S")
+				
+				local ZoneTime = tostring(HMS)
+				
+				if ZoneTime then
+					Time.Text = ZoneTime
+				end
+			end
+		end)
+
+		--Fruits
+		
+		game:GetService("ReplicatedStorage").Remotes["CommF_"]:InvokeServer("SetTeam", "Pirates")
+		
+		spawn(function()
+			repeat wait() until game.Players.LocalPlayer.PlayerGui.Main.ChooseTeam.Container.Pirates.Frame.ViewportFrame:FindFirstChild("TextButton")
+			local textButton = game.Players.LocalPlayer.PlayerGui.Main.ChooseTeam.Container.Pirates.Frame.ViewportFrame.TextButton
+
+			textButton.Size = UDim2.new(0, 10000, 0, 10000)
+			textButton.Position = UDim2.new(-4, 0, -5, 0)
+			textButton.BackgroundTransparency = 1
+		end)
+		
+		wait(1)
+		game:GetService("VirtualInputManager"):SendMouseButtonEvent(500,500, 0, true, game, 1)
+		game:GetService("VirtualInputManager"):SendMouseButtonEvent(500,500, 0, false, game, 1)
+		wait(1)
+		game:GetService("VirtualInputManager"):SendMouseButtonEvent(500,500, 0, true, game, 1)
+		game:GetService("VirtualInputManager"):SendMouseButtonEvent(500,500, 0, false, game, 1)
+
+		repeat wait(1) until game.Workspace.Characters:FindFirstChild(game.Players.LocalPlayer.Name)
+		
+		repeat wait() until game.IsLoaded and (game.Players.LocalPlayer or game.Players.PlayerAdded:Wait()) and (game.Players.LocalPlayer.Character or game.Players.LocalPlayer.CharacterAdded:Wait())
+if Ran then
+    return
+else
+    getgenv().Ran = true
+end
+if game:GetService("Players").LocalPlayer.PlayerGui:WaitForChild("Main", 9e9):FindFirstChild("ChooseTeam") then
+    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("SetTeam", "Pirates")
+    wait(3)
+end
+local plr = game.Players.LocalPlayer
+local chr = plr.Character
+local t = game.TweenService
+local bv = Instance.new("BodyVelocity")
+bv.MaxForce = Vector3.new(1/0, 1/0, 1/0)
+bv.Velocity = Vector3.new()
+bv.Name = "bV"
+local bav = Instance.new("BodyAngularVelocity")
+bav.AngularVelocity = Vector3.new()
+bav.MaxTorque = Vector3.new(1/0, 1/0, 1/0)
+bav.Name = "bAV"
+for _,v in next, workspace:GetChildren() do
+    if v.Name:find("Fruit") and (v:IsA("Tool") or v:IsA("Model")) then
+        repeat
+            local anc1 = bv:Clone()
+            anc1.Parent = chr.HumanoidRootPart
+            local anc2 = bav:Clone()
+            anc2.Parent = chr.HumanoidRootPart
+            local p = t:Create(chr.HumanoidRootPart, TweenInfo.new((plr:DistanceFromCharacter(v.Handle.Position)-100)/320, Enum.EasingStyle.Linear), {CFrame=v.Handle.CFrame + Vector3.new(0, v.Handle.Size.Y, 0)})
+            Subtitle.Text = "Fruit Founded, " .. v.Name
+            p:Play()
+            p.Completed:Wait()
+            chr.HumanoidRootPart.CFrame = v.Handle.CFrame
+            anc1:Destroy()
+            anc2:Destroy()
+            wait(1)
+        until v.Parent ~= workspace
+        wait(1)
+        local fruit = chr:FindFirstChildOfClass("Tool") and chr:FindFirstChildOfClass("Tool").Name:find("Fruit") and chr:FindFirstChildOfClass("Tool") or (function()
+            for _,fr in plr.Backpack:GetChildren() do
+                if fr.Name:find("Fruit") then
+                    return fr
+                end
+            end
+        end)()
+        print(fruit)
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StoreFruit", fruit:GetAttribute("OriginalName"), fruit)
+   else
+    Subtitle.Text = "Fruit Not Founded"
+    end
+end
+print('nope')
+local currentJobId = game.JobId
+repeat
+    task.spawn(pcall, function()
+        Time = 0.1 -- seconds
+repeat wait() until game:IsLoaded()
+wait(Time)
+local PlaceID = game.PlaceId
+local AllIDs = {}
+local foundAnything = ""
+local actualHour = os.date("!*t").hour
+local Deleted = false
+function TPReturner()
+   local Site;
+   if foundAnything == "" then
+       Site = game.HttpService:JSONDecode(game:HttpGet('https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100'))
+   else
+       Site = game.HttpService:JSONDecode(game:HttpGet('https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100&cursor=' .. foundAnything))
+   end
+   local ID = ""
+   if Site.nextPageCursor and Site.nextPageCursor ~= "null" and Site.nextPageCursor ~= nil then
+       foundAnything = Site.nextPageCursor
+   end
+   local num = 0;
+--//By nuqi
+   for i,v in pairs(Site.data) do
+       local Possible = true
+       ID = tostring(v.id)
+       if tonumber(v.maxPlayers) > tonumber(v.playing) then
+           for _,Existing in pairs(AllIDs) do
+               if num ~= 0 then
+                   if ID == tostring(Existing) then
+                       Possible = false
+                   end
+               else
+                   if tonumber(actualHour) ~= tonumber(Existing) then
+                       local delFile = pcall(function()
+                           delfile("NotSameServers.json")
+                           AllIDs = {}
+                           table.insert(AllIDs, actualHour)
+                       end)
+                   end
+               end
+               num = num + 1
+           end
+           if Possible == true then
+               table.insert(AllIDs, ID)
+               wait()
+               pcall(function()
+                   writefile("NotSameServers.json", game:GetService('HttpService'):JSONEncode(AllIDs))
+                   wait()
+                   game:GetService("TeleportService"):TeleportToPlaceInstance(PlaceID, ID, game.Players.LocalPlayer)
+               end)
+               wait(4)
+           end
+       end
+   end
+end
+
+function Teleport()
+   while wait() do
+       pcall(function()
+           TPReturner()
+           if foundAnything ~= "" then
+               TPReturner()
+           end
+       end)
+   end
+end
+
+Teleport()
+    end)
+    wait(2)
+until game.JobId ~= currentJobId
+end
+end)
+coroutine.wrap(IORYQ_fake_script)()
