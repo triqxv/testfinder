@@ -352,15 +352,7 @@ local function IORYQ_fake_script() -- Background.Main
 		repeat wait(1) until game.Workspace.Characters:FindFirstChild(game.Players.LocalPlayer.Name)
 		
 		repeat wait() until game.IsLoaded and (game.Players.LocalPlayer or game.Players.PlayerAdded:Wait()) and (game.Players.LocalPlayer.Character or game.Players.LocalPlayer.CharacterAdded:Wait())
-if Ran then
-    return
-else
-    getgenv().Ran = true
-end
-if game:GetService("Players").LocalPlayer.PlayerGui:WaitForChild("Main", 9e9):FindFirstChild("ChooseTeam") then
-    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("SetTeam", "Pirates")
-    wait(3)
-end
+
 local plr = game.Players.LocalPlayer
 local chr = plr.Character
 local t = game.TweenService
